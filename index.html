@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FussBall League - Inicio</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo-area">
+            <img src="logo-sitio.png" alt="Logo FussBall League" class="site-logo">
+            <span class="site-title">FussBall League</span>
+        </div>
+        
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+
+                <li class="dropdown">
+                    <button class="dropbtn">Equipos <i class="fas fa-caret-down"></i></button>
+                    <div class="dropdown-content equipos-grid">
+                        <div class="club-box"><a href="#">Atlético Hawks</a></div>
+                        <div class="club-box"><a href="#">Red Dragons</a></div>
+                        <div class="club-box"><a href="#">Tauro FC</a></div>
+                        <div class="club-box"><a href="#">Drakos FC</a></div>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <button class="dropbtn">Torneos <i class="fas fa-caret-down"></i></button>
+                    <div class="dropdown-content torneos-list">
+                        <a href="#">Liga Fuss</a>
+                        <a href="#">Fuss Cup</a>
+                        <a href="#">Copa Bedrock</a>
+                        <a href="#">Champions League</a>
+                        <a href="#">Europa League</a>
+                        <a href="#">Super Cup</a>
+                        <a href="#">Fuss Super Cup</a>
+                    </div>
+                </li>
+
+                <li><a href="ultimos-encuentros.html">Últimos encuentros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-area">
+        <h2>Bienvenido a FussBall League</h2>
+        <p>Aquí irá toda la información general del sitio y las noticias principales.</p>
+        </main>
+
+    <footer class="main-footer">
+        <p>FussBall league &copy; Derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script> 
+</body>
+</html>
