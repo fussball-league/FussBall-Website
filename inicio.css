@@ -65,6 +65,16 @@
     opacity: 0.9;
 }
 
+.uptime-square {
+    background: rgba(6, 59, 92, 0.2);
+    border-color: rgba(6, 59, 92, 0.5);
+    transition: all 0.3s ease;
+}
+
+.uptime-square:hover {
+    transform: translateY(-5px);
+}
+
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2rem;
