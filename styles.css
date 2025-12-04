@@ -6,7 +6,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: #0a0e1a;
+    background: #000000;
     color: white;
     min-height: 100vh;
     display: flex;
@@ -15,14 +15,14 @@ body {
 
 /* Header */
 header {
-    background: rgba(10, 14, 26, 0.95);
+    background: #000000;
     padding: 1.2rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(6, 59, 92, 0.3);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid rgba(6, 59, 92, 0.4);
+    box-shadow: none;
 }
 
 .header-container {
@@ -147,10 +147,7 @@ main {
     margin-bottom: 2.5rem;
     text-align: center;
     font-weight: 700;
-    background: linear-gradient(90deg, white, rgba(255, 255, 255, 0.7));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: white;
 }
 
 /* Hero Section */
@@ -169,10 +166,7 @@ main {
     margin-bottom: 1rem;
     font-weight: 800;
     line-height: 1.2;
-    background: linear-gradient(135deg, #ffffff, #a0c4d9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: white;
 }
 
 .hero-subtitle {
@@ -230,20 +224,20 @@ main {
 }
 
 .team-card-inner {
-    background: rgba(6, 59, 92, 0.15);
+    background: rgba(6, 59, 92, 0.1);
     border-radius: 16px;
     padding: 2rem;
-    border: 1px solid rgba(6, 59, 92, 0.3);
+    border: 1px solid rgba(6, 59, 92, 0.25);
     transition: all 0.4s ease;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    box-shadow: none;
     backdrop-filter: blur(10px);
 }
 
 .team-card-inner:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(6, 59, 92, 0.4);
-    border-color: rgba(6, 59, 92, 0.6);
-    background: rgba(6, 59, 92, 0.25);
+    box-shadow: 0 8px 30px rgba(6, 59, 92, 0.3);
+    border-color: rgba(6, 59, 92, 0.5);
+    background: rgba(6, 59, 92, 0.2);
 }
 
 .team-logo-placeholder {
@@ -325,24 +319,24 @@ main {
 
 .tournament-item {
     margin-bottom: 1.2rem;
-    background: rgba(6, 59, 92, 0.15);
+    background: rgba(6, 59, 92, 0.08);
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(6, 59, 92, 0.3);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(6, 59, 92, 0.25);
+    box-shadow: none;
     transition: all 0.3s ease;
 }
 
 .tournament-item:hover {
-    border-color: rgba(6, 59, 92, 0.6);
-    box-shadow: 0 6px 25px rgba(6, 59, 92, 0.3);
-    background: rgba(6, 59, 92, 0.25);
+    border-color: rgba(6, 59, 92, 0.5);
+    box-shadow: 0 4px 20px rgba(6, 59, 92, 0.25);
+    background: rgba(6, 59, 92, 0.15);
 }
 
 .tournament-header {
     width: 100%;
     padding: 1.3rem 1.8rem;
-    background: rgba(6, 59, 92, 0.3);
+    background: rgba(6, 59, 92, 0.15);
     color: white;
     border: none;
     cursor: pointer;
@@ -355,7 +349,7 @@ main {
 }
 
 .tournament-header:hover {
-    background: rgba(6, 59, 92, 0.5);
+    background: rgba(6, 59, 92, 0.3);
 }
 
 .tournament-name {
@@ -391,10 +385,10 @@ main {
 .empty-state {
     text-align: center;
     padding: 4rem 2rem;
-    background: rgba(6, 59, 92, 0.15);
+    background: rgba(6, 59, 92, 0.08);
     border-radius: 16px;
     margin-top: 2rem;
-    border: 1px solid rgba(6, 59, 92, 0.3);
+    border: 1px solid rgba(6, 59, 92, 0.25);
 }
 
 .empty-icon {
@@ -410,12 +404,12 @@ main {
 
 /* Footer */
 footer {
-    background: rgba(10, 14, 26, 0.95);
+    background: #000000;
     padding: 2rem;
     text-align: center;
     margin-top: auto;
-    border-top: 1px solid rgba(6, 59, 92, 0.3);
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.8);
+    border-top: 1px solid rgba(6, 59, 92, 0.4);
+    box-shadow: none;
 }
 
 .footer-content p {
@@ -440,7 +434,7 @@ footer {
         top: 80px;
         left: 0;
         right: 0;
-        background: rgba(10, 14, 26, 0.98);
+        background: #000000;
         flex-direction: column;
         padding: 2rem;
         gap: 1rem;
@@ -448,7 +442,7 @@ footer {
         overflow: hidden;
         transition: max-height 0.3s ease;
         backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgba(6, 59, 92, 0.3);
+        border-bottom: 1px solid rgba(6, 59, 92, 0.4);
     }
 
     .nav-menu.active {
