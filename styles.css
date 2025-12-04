@@ -82,6 +82,11 @@ header {
     position: relative;
 }
 
+.nav-link.active {
+    background-color: rgba(6, 59, 92, 0.5);
+    border-bottom: 2px solid #063b5c;
+}
+
 .nav-link::before {
     content: '';
     position: absolute;
@@ -181,6 +186,39 @@ main {
     line-height: 1.8;
     margin-bottom: 1rem;
     opacity: 0.85;
+}
+
+/* Info Cards (Inicio page) */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-card {
+    background: rgba(6, 59, 92, 0.1);
+    border: 1px solid rgba(6, 59, 92, 0.25);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    background: rgba(6, 59, 92, 0.2);
+    border-color: rgba(6, 59, 92, 0.5);
+    transform: translateY(-5px);
+}
+
+.info-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.info-card p {
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
 /* Teams Section */
