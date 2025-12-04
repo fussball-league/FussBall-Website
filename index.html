@@ -4,69 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FussBall League</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- HEADER -->
     <header>
-        <div class="logo-box">FL</div>
-
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li class="dropdown">
-                    <a href="#equipos">Equipos</a>
-                    <div class="dropdown-content equipos-lista">
-                        <div class="equipo-card">Atlético Hawks</div>
-                        <div class="equipo-card">Red Dragons</div>
-                        <div class="equipo-card">Tauro FC</div>
-                        <div class="equipo-card">Drakos FC</div>
-                    </div>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#torneos">Torneos</a>
-                    <div class="dropdown-content torneos-lista">
-                        <p>Liga Fuss</p>
-                        <p>Fuss Cup</p>
-                        <p>Copa Bedrock</p>
-                        <p>Champions League</p>
-                        <p>Europa League</p>
-                        <p>Super Cup</p>
-                        <p>Fuss Super Cup</p>
-                    </div>
-                </li>
-
-                <li><a href="#ultimos">Últimos encuentros</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <div class="logo">FL</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#equipos" class="nav-link">Equipos</a></li>
+                    <li><a href="#torneos" class="nav-link">Torneos</a></li>
+                    <li><a href="#encuentros" class="nav-link">Últimos Encuentros</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
     <main>
-        <section id="inicio">
-            <h1>Bienvenido a FussBall League</h1>
-            <p>Este sitio presenta información sobre equipos, torneos y encuentros.</p>
+        <section id="inicio" class="section">
+            <div class="container">
+                <h1>Bienvenido a FussBall League</h1>
+                <p>La liga de fútbol más emocionante del mundo virtual. Aquí encontrarás información sobre los equipos, torneos y los últimos encuentros de la temporada.</p>
+                <p>Mantente al día con las estadísticas, resultados y noticias de tus equipos favoritos.</p>
+            </div>
         </section>
 
-        <section id="equipos">
-            <h2>Equipos</h2>
+        <section id="equipos" class="section">
+            <div class="container">
+                <h2>Equipos</h2>
+                <div class="teams-grid">
+                    <div class="team-card" data-delay="0">
+                        <div class="team-header">
+                            <div class="team-logo-placeholder"></div>
+                            <h3>Atlético Hawks</h3>
+                        </div>
+                        <button class="expand-btn">Ver más</button>
+                        <div class="team-content">
+                            <p>Información del equipo próximamente...</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card" data-delay="1">
+                        <div class="team-header">
+                            <div class="team-logo-placeholder"></div>
+                            <h3>Red Dragons</h3>
+                        </div>
+                        <button class="expand-btn">Ver más</button>
+                        <div class="team-content">
+                            <p>Información del equipo próximamente...</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card" data-delay="2">
+                        <div class="team-header">
+                            <div class="team-logo-placeholder"></div>
+                            <h3>Tauro FC</h3>
+                        </div>
+                        <button class="expand-btn">Ver más</button>
+                        <div class="team-content">
+                            <p>Información del equipo próximamente...</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card" data-delay="3">
+                        <div class="team-header">
+                            <div class="team-logo-placeholder"></div>
+                            <h3>Drakos FC</h3>
+                        </div>
+                        <button class="expand-btn">Ver más</button>
+                        <div class="team-content">
+                            <p>Información del equipo próximamente...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="torneos">
-            <h2>Torneos disponibles</h2>
+        <section id="torneos" class="section">
+            <div class="container">
+                <h2>Torneos</h2>
+                <div class="tournaments">
+                    <div class="tournament-item">
+                        <button class="tournament-header">
+                            <span>Liga Fuss</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="tournament-content">
+                            <p>La competición principal de la temporada donde los mejores equipos compiten por el título de campeón de liga.</p>
+                        </div>
+                    </div>
+
+                    <div class="tournament-item">
+                        <button class="tournament-header">
+                            <span>Fuss Cup</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="tournament-content">
+                            <p>Torneo de eliminación directa que reúne a todos los equipos en busca de la copa más prestigiosa.</p>
+                        </div>
+                    </div>
+
+                    <div class="tournament-item">
+                        <button class="tournament-header">
+                            <span>Copa Bedrock</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="tournament-content">
+                            <p>Competición especial que se disputa durante la temporada con formato único y emocionantes premios.</p>
+                        </div>
+                    </div>
+
+                    <div class="tournament-item">
+                        <button class="tournament-header">
+                            <span>Champions League</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="tournament-content">
+                            <p>El torneo más prestigioso a nivel internacional donde compiten los mejores clubes del continente.</p>
+                        </div>
+                    </div>
+
+                    <div class="tournament-item">
+                        <button class="tournament-header">
+                            <span>Europa League</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="tournament-content">
+                            <p>Segunda competición europea que ofrece oportunidades a equipos de toda la región.</p>
+                        </div>
+                    </div>
+
+                    <div class="tournament-item">
+                        <button class="tournament-header">
+                            <span>Super Cup</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="tournament-content">
+                            <p>Enfrentamiento entre los campeones de las dos competiciones europeas más importantes.</p>
+                        </div>
+                    </div>
+
+                    <div class="tournament-item">
+                        <button class="tournament-header">
+                            <span>Fuss Super Cup</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="tournament-content">
+                            <p>Partido inaugural de la temporada entre el campeón de liga y el ganador de la copa nacional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="ultimos">
-            <h2>Últimos encuentros</h2>
-            <p>(Vacío por el momento)</p>
+        <section id="encuentros" class="section">
+            <div class="container">
+                <h2>Últimos Encuentros</h2>
+                <div class="empty-state">
+                    <p>Contenido próximamente...</p>
+                </div>
+            </div>
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
-        FussBall League © Derechos Reservados
+        <p>FussBall League © Derechos reservados</p>
     </footer>
 
     <script src="script.js"></script>
