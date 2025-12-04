@@ -71,10 +71,6 @@
     transition: all 0.3s ease;
 }
 
-.uptime-square:hover {
-    transform: translateY(-5px);
-}
-
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2rem;
