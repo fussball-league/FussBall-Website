@@ -67,8 +67,10 @@
 
 .uptime-square {
     background: rgba(6, 59, 92, 0.2);
-    border-color: rgba(6, 59, 92, 0.5);
     transition: all 0.3s ease;
+    border: 1px solid rgba(6, 59, 92, 0.25);
+    border-radius: 12px;
+    padding: 2rem;
 }
 
 @media (max-width: 768px) {
