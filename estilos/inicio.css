@@ -1,0 +1,89 @@
+/* ESTILOS ESPECÍFICOS PARA LA PÁGINA DE INICIO */
+
+.hero-section {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: white;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.hero-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    opacity: 0.85;
+}
+
+/* Info Cards */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-card {
+    background: rgba(6, 59, 92, 0.1);
+    border: 1px solid rgba(6, 59, 92, 0.25);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    background: rgba(6, 59, 92, 0.2);
+    border-color: rgba(6, 59, 92, 0.5);
+    transform: translateY(-5px);
+}
+
+.info-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.info-card p {
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.uptime-square {
+    background: rgba(6, 59, 92, 0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(6, 59, 92, 0.25);
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
