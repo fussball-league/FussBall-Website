@@ -1,0 +1,81 @@
+/* ESTILOS ESPECÍFICOS PARA LA PÁGINA DE TORNEOS */
+
+.tournaments {
+    max-width: 900px;
+    margin: 3rem auto;
+}
+
+.tournament-item {
+    margin-bottom: 1.2rem;
+    background: rgba(6, 59, 92, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(6, 59, 92, 0.25);
+    box-shadow: none;
+    transition: all 0.4s ease;
+}
+
+.tournament-item:hover {
+    border-color: rgba(6, 59, 92, 0.5);
+    box-shadow: 0 4px 20px rgba(6, 59, 92, 0.25);
+    background: rgba(6, 59, 92, 0.15);
+}
+
+.tournament-header {
+    width: 100%;
+    padding: 1.3rem 1.8rem;
+    background: rgba(6, 59, 92, 0.15);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+.tournament-header:hover {
+    background: rgba(6, 59, 92, 0.3);
+}
+
+.tournament-name {
+    letter-spacing: 0.3px;
+}
+
+.arrow {
+    transition: transform 0.2s ease;
+    font-size: 1rem;
+}
+
+.tournament-header.active .arrow {
+    transform: rotate(180deg);
+}
+
+.tournament-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.tournament-content.active {
+    max-height: 300px;
+}
+
+.tournament-content p {
+    padding: 1.5rem 1.8rem;
+    line-height: 1.7;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .tournament-header {
+        padding: 1rem 1.2rem;
+        font-size: 1rem;
+    }
+
+    .tournament-content p {
+        padding: 1.2rem;
+    }
+}
