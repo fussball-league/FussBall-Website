@@ -6,12 +6,17 @@ const SHEETS_API_URL = 'https://script.google.com/macros/s/AKfycbzVnyKKYHPZNaHHM
 // ========================================
 async function cargarTodosLosDatos() {
   try {
-    mostrarCargando();
+    console.log('🔍 Intentando cargar desde:', SHEETS_API_URL);
     
     const response = await fetch(SHEETS_API_URL);
-    const datos = await response.json();
+    console.log('📡 Response status:', response.status);
     
-    console.log('✅ Datos cargados correctamente:', datos);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const datos = await response.json();
+    console.log('✅ Datos recibidos:', datos);
     
     // Cargar cada sección según la página actual
     if (datos.Equipos) cargarTablaEquipos(datos.Equipos);
@@ -24,7 +29,8 @@ async function cargarTodosLosDatos() {
     ocultarCargando();
     
   } catch (error) {
-    console.error('❌ Error al cargar datos:', error);
+    console.error('❌ Error detallado:', error);
+    console.error('URL usada:', SHEETS_API_URL);
     mostrarError();
   }
 }
