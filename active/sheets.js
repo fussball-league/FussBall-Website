@@ -1,5 +1,5 @@
 // Reemplaza con tu URL de Apps Script
-const SHEETS_API_URL = 'https://script.google.com/macros/s/AKfycbzVnyKKYHPZNaHHMCQ6C-8RnG0W2uh6oNODP17vC8tHmhN5Eb3OqQUecd4Vfi_fnCRx_g/exec';
+const SHEETS_API_URL = 'https://script.google.com/macros/s/AKfycbwiw9MAzfKbZDgOIHMcu2D5kD19zf-eychflNTWyziEAwDbZVNJaLOQq52CV95Jvszg0g/exec';
 
 // ========================================
 // FUNCIÓN PRINCIPAL - CARGAR TODOS LOS DATOS
