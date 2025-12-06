@@ -1302,48 +1302,19 @@ footer {
   }
 }
 
-/* ========================================
-   RESPONSIVE
-   ======================================== */
-@media (max-width: 768px) {
-  .tabla-posiciones {
-    font-size: 0.85rem;
-  }
-  
-  .tabla-posiciones th,
-  .tabla-posiciones td {
-    padding: 0.7rem 0.5rem;
-  }
-  
-  .encuentros-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .torneos-lista {
-    grid-template-columns: 1fr;
-  }
-  
-  .proximos-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .estadisticas-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .estadisticas {
-    gap: 1rem;
-  }
-}
-
-/* Responsive Design */
+/* Responsive Design - REEMPLAZA la sección @media (max-width: 768px) */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+        z-index: 1001;
     }
 
     .site-title {
         font-size: 1.2rem;
+    }
+
+    .site-subtitle {
+        font-size: 0.65rem;
     }
 
     nav {
@@ -1351,39 +1322,48 @@ footer {
     }
 
     .nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
         background: #000000;
         flex-direction: column;
-        padding: 0 2rem;
+        padding: 5rem 2rem 2rem;
         gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease, padding 0.3s ease;
+        overflow-y: auto;
+        transition: right 0.3s ease;
         backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgba(6, 59, 92, 0.4);
-        opacity: 0;
-        visibility: hidden;
+        border-left: 1px solid rgba(6, 59, 92, 0.4);
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
     }
 
     .nav-menu.active {
-        max-height: 500px;
-        padding: 2rem;
-        gap: 1rem;
-        opacity: 1;
-        visibility: visible;
+        right: 0;
     }
 
     .nav-link {
         padding: 1rem 1.3rem;
-        text-align: center;
+        text-align: left;
         border-bottom: 1px solid rgba(6, 59, 92, 0.2);
+        width: 100%;
     }
 
     .nav-link:last-child {
         border-bottom: none;
+    }
+
+    .nav-menu.active::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
     }
 
     .header-container {
@@ -1419,6 +1399,25 @@ footer {
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .team-card-inner {
+        padding: 1.5rem;
+    }
+
+    .tournament-header {
+        padding: 1rem 1.2rem;
+        font-size: 1rem;
     }
 }
 
