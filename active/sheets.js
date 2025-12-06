@@ -58,12 +58,24 @@ function cargarTablaEquipos(equipos) {
             <th>GF</th>
             <th>GC</th>
             <th>DG</th>
+            <th>Racha</th>
           </tr>
         </thead>
         <tbody>
   `;
   
   equipos.forEach((equipo, index) => {
+    // Formatear racha con cuadrados de colores
+    let rachaHTML = '';
+    if (equipo.Racha) {
+      rachaHTML = equipo.Racha.split('').map(r => {
+        if (r === 'V') return '<span class="racha-cuadro racha-v">V</span>';
+        if (r === 'E') return '<span class="racha-cuadro racha-e">E</span>';
+        if (r === 'D') return '<span class="racha-cuadro racha-d">D</span>';
+        return '';
+      }).join('');
+    }
+    
     html += `
       <tr class="equipo-fila">
         <td class="posicion"><strong>${index + 1}</strong></td>
@@ -76,6 +88,7 @@ function cargarTablaEquipos(equipos) {
         <td>${equipo.GF}</td>
         <td>${equipo.GC}</td>
         <td class="${equipo.DG >= 0 ? 'positivo' : 'negativo'}">${equipo.DG}</td>
+        <td class="racha-col">${rachaHTML || '-'}</td>
       </tr>
     `;
   });
@@ -122,7 +135,7 @@ function cargarUltimosEncuentros(encuentros) {
       <div class="encuentro-card">
         <div class="encuentro-header">
           <span class="fecha">${fechaFormateada}</span>
-          <span class="torneo">${encuentro.Torneo || 'Torneo'}</span>
+          <span class="torneo">${encuentro.Competicion || encuentro.Torneo || 'Liga'}</span>
         </div>
         <div class="encuentro-resultado">
           <div class="equipo ${ganador === 'local' ? 'ganador' : ''}">
@@ -158,7 +171,8 @@ function cargarTorneos(torneos) {
   let html = '<div class="torneos-lista">';
   
   torneos.forEach(torneo => {
-    const estadoClass = torneo.Estado.toLowerCase();
+    const estadoClass = torneo.Estado ? torneo.Estado.toLowerCase() : '';
+    const campeon = torneo.Campeón_Actual || torneo['Campeón Actual'] || torneo.Campeon_Actual;
     
     html += `
       <div class="torneo-card estado-${estadoClass}">
@@ -175,10 +189,10 @@ function cargarTorneos(torneos) {
             <span class="label">Equipos:</span>
             <span class="value">${torneo.Equipos}</span>
           </div>
-          ${torneo.Campeón_Actual && torneo.Campeón_Actual !== '-' ? `
+          ${campeon && campeon !== '-' && campeon !== '' ? `
           <div class="info-item campeon">
             <span class="label">🏆 Campeón:</span>
-            <span class="value"><strong>${torneo.Campeón_Actual}</strong></span>
+            <span class="value"><strong>${campeon}</strong></span>
           </div>
           ` : ''}
         </div>
