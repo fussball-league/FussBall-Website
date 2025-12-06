@@ -684,6 +684,615 @@ footer {
     font-weight: 500;
 }
 
+/* ========================================
+   ESTILOS PARA DATOS DE GOOGLE SHEETS
+   ======================================== */
+
+/* Loader */
+.loader {
+  text-align: center;
+  padding: 3rem;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.loader::after {
+  content: '⚽';
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Error Message */
+.error-message {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.error-message button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background: rgba(6, 59, 92, 0.5);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.error-message button:hover {
+  background: rgba(6, 59, 92, 0.8);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   TABLA DE POSICIONES
+   ======================================== */
+.tabla-container {
+  overflow-x: auto;
+  background: rgba(6, 59, 92, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(6, 59, 92, 0.25);
+}
+
+.tabla-posiciones {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.tabla-posiciones thead {
+  background: rgba(6, 59, 92, 0.3);
+}
+
+.tabla-posiciones th {
+  padding: 1rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid rgba(6, 59, 92, 0.5);
+}
+
+.tabla-posiciones td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(6, 59, 92, 0.15);
+}
+
+.equipo-fila:hover {
+  background: rgba(6, 59, 92, 0.2);
+}
+
+.equipo-fila.posicion-1 {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.equipo-nombre {
+  text-align: left !important;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.posicion {
+  font-size: 1.1rem;
+  color: rgba(255, 215, 0, 0.9);
+}
+
+.puntos {
+  font-size: 1.1rem;
+  color: #4ade80;
+}
+
+.victorias {
+  color: #4ade80;
+}
+
+.empates {
+  color: #fbbf24;
+}
+
+.derrotas {
+  color: #f87171;
+}
+
+.positivo {
+  color: #4ade80;
+}
+
+.negativo {
+  color: #f87171;
+}
+
+/* Racha */
+.racha {
+  font-family: monospace;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+
+.racha .v {
+  color: #4ade80;
+  font-weight: bold;
+}
+
+.racha .e {
+  color: #fbbf24;
+  font-weight: bold;
+}
+
+.racha .d {
+  color: #f87171;
+  font-weight: bold;
+}
+
+.racha-buena {
+  background: rgba(74, 222, 128, 0.1);
+}
+
+.racha-mala {
+  background: rgba(248, 113, 113, 0.1);
+}
+
+.racha-regular {
+  background: rgba(251, 191, 36, 0.1);
+}
+
+/* ========================================
+   ÚLTIMOS ENCUENTROS
+   ======================================== */
+.encuentros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.encuentro-card {
+  background: rgba(6, 59, 92, 0.1);
+  border: 1px solid rgba(6, 59, 92, 0.25);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.encuentro-card:hover {
+  background: rgba(6, 59, 92, 0.2);
+  border-color: rgba(6, 59, 92, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(6, 59, 92, 0.3);
+}
+
+.encuentro-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(6, 59, 92, 0.2);
+}
+
+.encuentro-header .fecha {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  text-transform: capitalize;
+}
+
+.encuentro-header .torneo {
+  font-size: 0.75rem;
+  background: rgba(6, 59, 92, 0.3);
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.encuentro-resultado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.encuentro-resultado .equipo {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.encuentro-resultado .equipo.ganador {
+  background: rgba(74, 222, 128, 0.15);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.encuentro-resultado .nombre {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.encuentro-resultado .goles {
+  font-size: 1.3rem;
+  font-weight: 800;
+  min-width: 30px;
+  text-align: center;
+}
+
+.encuentro-resultado .separador {
+  font-weight: 300;
+  opacity: 0.5;
+}
+
+.estadio {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  text-align: center;
+}
+
+/* ========================================
+   TORNEOS
+   ======================================== */
+.torneos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.torneo-card {
+  background: rgba(6, 59, 92, 0.1);
+  border: 1px solid rgba(6, 59, 92, 0.25);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.torneo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(6, 59, 92, 0.3);
+  border-color: rgba(6, 59, 92, 0.5);
+}
+
+.torneo-card.estado-activo {
+  border-left: 4px solid #4ade80;
+}
+
+.torneo-card.estado-finalizado {
+  opacity: 0.7;
+}
+
+.torneo-card.estado-próximo {
+  border-left: 4px solid #3b82f6;
+}
+
+.torneo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(6, 59, 92, 0.2);
+}
+
+.torneo-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.torneo-header .estado {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(6, 59, 92, 0.3);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+}
+
+.torneo-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.info-item .label {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.info-item .value {
+  font-weight: 600;
+}
+
+.info-item.campeon {
+  margin-top: 0.5rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(6, 59, 92, 0.2);
+}
+
+/* ========================================
+   GOLEADORES
+   ======================================== */
+.goleadores-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.goleador-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(6, 59, 92, 0.1);
+  border: 1px solid rgba(6, 59, 92, 0.25);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.goleador-item:hover {
+  background: rgba(6, 59, 92, 0.2);
+  border-color: rgba(6, 59, 92, 0.5);
+  transform: translateX(5px);
+}
+
+.goleador-item .pos {
+  font-size: 1.5rem;
+  font-weight: 800;
+  min-width: 40px;
+  text-align: center;
+}
+
+.jugador-info {
+  flex: 1;
+}
+
+.jugador-nombre {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.jugador-equipo {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.estadisticas {
+  display: flex;
+  gap: 2rem;
+}
+
+.estadisticas .stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.estadisticas .label {
+  font-size: 1.2rem;
+}
+
+.estadisticas .valor {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ========================================
+   PRÓXIMOS PARTIDOS
+   ======================================== */
+.proximos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.partido-card {
+  background: rgba(6, 59, 92, 0.1);
+  border: 1px solid rgba(6, 59, 92, 0.25);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.partido-card:hover {
+  background: rgba(6, 59, 92, 0.2);
+  border-color: rgba(6, 59, 92, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(6, 59, 92, 0.3);
+}
+
+.partido-fecha {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(6, 59, 92, 0.2);
+}
+
+.partido-fecha .fecha {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.partido-fecha .hora {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #4ade80;
+}
+
+.partido-torneo {
+  font-size: 0.75rem;
+  background: rgba(6, 59, 92, 0.3);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.partido-equipos {
+  margin: 1.5rem 0;
+}
+
+.equipo-local,
+.equipo-visitante {
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.vs {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  font-weight: 300;
+  margin: 0.5rem 0;
+}
+
+.partido-estadio {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(6, 59, 92, 0.2);
+}
+
+/* ========================================
+   ESTADÍSTICAS GENERALES
+   ======================================== */
+.estadisticas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.estadistica-card {
+  background: rgba(6, 59, 92, 0.1);
+  border: 1px solid rgba(6, 59, 92, 0.25);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.estadistica-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(6, 59, 92, 0.3);
+  border-color: rgba(6, 59, 92, 0.5);
+}
+
+.estadistica-card h3 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-box {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-box.destacado {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  grid-column: 1 / -1;
+}
+
+.stat-valor {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.records {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(6, 59, 92, 0.2);
+}
+
+.record {
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.record strong {
+  color: #4ade80;
+  font-weight: 700;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .tabla-posiciones {
+    font-size: 0.85rem;
+  }
+  
+  .tabla-posiciones th,
+  .tabla-posiciones td {
+    padding: 0.7rem 0.5rem;
+  }
+  
+  .encuentros-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .torneos-lista {
+    grid-template-columns: 1fr;
+  }
+  
+  .proximos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .estadisticas-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .estadisticas {
+    gap: 1rem;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
