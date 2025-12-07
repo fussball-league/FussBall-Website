@@ -69,6 +69,230 @@
     background: rgba(0, 0, 0, 0.3);
 }
 
+/* CARRUSEL DE TORNEOS */
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    gap: 1.5rem;
+    margin: 3rem 0;
+    min-height: 500px;
+}
+
+.carousel-content {
+    flex: 1;
+    background: rgba(6, 59, 92, 0.1);
+    border: 1px solid rgba(6, 59, 92, 0.3);
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.carousel-header {
+    text-align: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(6, 59, 92, 0.3);
+}
+
+.carousel-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.carousel-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.carousel-descripcion {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    opacity: 0.9;
+    text-align: center;
+    margin: 0;
+}
+
+.torneo-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.stat-badge {
+    background: rgba(6, 59, 92, 0.2);
+    border: 1px solid rgba(6, 59, 92, 0.4);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-badge:hover {
+    background: rgba(6, 59, 92, 0.3);
+    transform: translateY(-2px);
+}
+
+.stat-badge.campeon-badge {
+    grid-column: 1 / -1;
+    background: rgba(255, 215, 0, 0.1);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.carousel-tabla {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.tabla-placeholder {
+    text-align: center;
+    opacity: 0.6;
+}
+
+/* Botones del carrusel */
+.carousel-btn {
+    background: rgba(6, 59, 92, 0.4);
+    border: 2px solid rgba(6, 59, 92, 0.6);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.carousel-btn:hover {
+    background: rgba(6, 59, 92, 0.7);
+    border-color: rgba(6, 59, 92, 0.9);
+    transform: scale(1.1);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+
+.carousel-btn span {
+    line-height: 1;
+    margin-top: -5px;
+}
+
+/* Indicadores */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 2rem;
+}
+
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(6, 59, 92, 0.3);
+    border: 2px solid rgba(6, 59, 92, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator-dot:hover {
+    background: rgba(6, 59, 92, 0.5);
+    transform: scale(1.2);
+}
+
+.indicator-dot.active {
+    background: rgba(6, 59, 92, 0.9);
+    border-color: rgba(6, 59, 92, 1);
+    width: 30px;
+    border-radius: 6px;
+}
+
+/* Animación de transición */
+.carousel-content.transitioning {
+    opacity: 0.5;
+    transform: scale(0.98);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-container {
+        flex-direction: column;
+        gap: 1rem;
+        min-height: auto;
+    }
+    
+    .carousel-content {
+        padding: 1.5rem;
+    }
+    
+    .carousel-title {
+        font-size: 1.8rem;
+    }
+    
+    .carousel-descripcion {
+        font-size: 1rem;
+    }
+    
+    .carousel-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+    
+    .carousel-prev {
+        left: -10px;
+    }
+    
+    .carousel-next {
+        right: -10px;
+    }
+    
+    .torneo-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .stat-badge.campeon-badge {
+        grid-column: 1 / -1;
+    }
+}
+
 @media (max-width: 768px) {
     .tournament-header {
         padding: 1rem 1.2rem;
